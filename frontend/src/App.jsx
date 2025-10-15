@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app-container">
 
-      <LightRaysBackground /> {/* Fondo global el de las olas */}
+      <LightRaysBackground />
       <HomePage />
 
     </div>
