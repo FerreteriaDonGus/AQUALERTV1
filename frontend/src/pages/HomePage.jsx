@@ -4,7 +4,58 @@ import ForumsSection from "../components/ForumsSection";
 import CardNav from "../components/CardNav";
 import AnimatedList from "../components/AnimatedList";
 
-const anListitems = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10']; 
+const anListitems = [
+  {
+    title: 'Item 1',
+    description: 'Descripción del Item 1',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 2',
+    description: 'Descripción del Item 2',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 3',
+    description: 'Descripción del Item 3',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 4',
+    description: 'Descripción del Item 4',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 5',
+    description: 'Descripción del Item 5',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 6',
+    description: 'Descripción del Item 6',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 7',
+    description: 'Descripción del Item 7',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 8',
+    description: 'Descripción del Item 8',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 9',
+    description: 'Descripción del Item 9',
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    title: 'Item 10',
+    description: 'Descripción del Item 10',
+    image: 'https://via.placeholder.com/150'
+  }
+];
   
 
 const navItems = [

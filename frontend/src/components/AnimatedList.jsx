@@ -23,21 +23,14 @@ const AnimatedItem = ({ children, delay = 0, index, onMouseEnter, onClick }) => 
 
 const AnimatedList = ({
   items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-    'Item 10',
-    'Item 11',
-    'Item 12',
-    'Item 13',
-    'Item 14',
-    'Item 15'
+    { title: 'Item 1', description: 'Description 1', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 2', description: 'Description 2', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 3', description: 'Description 3', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 4', description: 'Description 3', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 5', description: 'Description 3', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 6', description: 'Description 3', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 7', description: 'Description 3', image: 'https://via.placeholder.com/150' },
+    { title: 'Item 8', description: 'Description 3', image: 'https://via.placeholder.com/150' }
   ],
   onItemSelect,
   showGradients = true,
@@ -124,7 +117,9 @@ const AnimatedList = ({
             }}
           >
             <div className={`item ${selectedIndex === index ? 'selected' : ''} ${itemClassName}`}>
-              <p className="item-text">{item}</p>
+              <img src={item.image} alt={item.title} className="item-image" />
+              <p className="item-title">{item.title}</p>
+              <p className="item-description">{item.description}</p>
             </div>
           </AnimatedItem>
         ))}
