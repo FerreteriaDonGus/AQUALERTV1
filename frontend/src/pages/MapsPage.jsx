@@ -22,7 +22,6 @@ function MapsPage() {
         return(
             <div className="Mapas">
             <Navbar />
-            <Banner />
             <DescriptionBox
             title="Mapas y data center"
             description="Explora nuestros mapas interactivos y accede a datos detallados sobre cuerpos de agua, clima y gestión del agua en México. Nuestra plataforma ofrece visualizaciones claras y herramientas analíticas para comprender mejor el estado del agua en diversas regiones."

@@ -5,10 +5,9 @@ function Banner() {
     return (
         <div className="banner">
             <div className="banner-content">
-                <h1>Aqualert</h1>
+                <h1>Aqua alert</h1>
                 <p>
-                    Bienvenido a <strong>Aqualert</strong>, Un proyecto enfocado a la difusión de información
-                    sobre el estado de los cuerpos de agua, clima y la gestión del agua en México.
+                    Identifica riesgos, recibe alertas, actúa.
                 </p>
         </div>
     </div>

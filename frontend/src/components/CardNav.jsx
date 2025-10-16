@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Logo from "../assets/logo.png";
 import './CardNav.css';
 
 const CardNav = ({
@@ -9,7 +10,7 @@ const CardNav = ({
   baseColor = '#fff',
   menuColor,
   buttonBgColor,
-  buttonTextColor
+  buttonTextColor,
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -149,7 +150,7 @@ const CardNav = ({
             <div className="nav-buttons-container"/>
             {/*placeholder para logo*/}
                 <button type="button" className="card-nav-logo-button" aria-label="volver a pagina principal">
-                    Aqualert
+                    <img src={Logo}/>
                 </button>
             </div>
          

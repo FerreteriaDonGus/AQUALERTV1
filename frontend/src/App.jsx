@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MapsPage from "./pages/MapsPage";
+import OurMission from "./pages/OurMission";
 import LightRaysBackground from "./components/LightRaysBackground";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/mapas" element={<MapsPage />} />
+        <Route path="/mision" element={<OurMission />} />
       </Routes>
     </Router>
   );

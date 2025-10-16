@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import ForumsSection from "../components/ForumsSection";
 import AnimatedList from "../components/AnimatedList";
+import DescriptionBox from "../components/DescriptionBox";
 import Navbar from "../components/Navbar";
 
 const anListitems = [
@@ -58,39 +59,6 @@ const anListitems = [
 ];
   
 
-const navItems = [
-  {
-    // NAVBAR TARJETA 1
-    label: 'Nosotros',
-    bgColor: '#333446',
-    textColor: '#EAEFEF',
-    links: [
-      // Enlaces que aparecerán dentro de esta tarjeta
-      { label: 'Nuestra Misión', href: '/nosotros', ariaLabel: 'Conoce nuestro proyecto' },
-      { label: 'Contacto', href: '/contacto', ariaLabel: 'Ponte en contacto con nosotros' }
-    ]
-  },
-  {
-    // NAVBAR TARJETA 2
-    label: 'Mapas',
-    bgColor: '#333446',
-    textColor: '#EAEFEF',
-    links: [
-      { label: 'Mapas Interactivos', href: '/mapas/interactivo', ariaLabel: 'Revisa mapas los mapas de organizaciones oficiales' },
-      { label: 'Galería', href: '/mapas/galeria', ariaLabel: 'Ve la galería de mapas' }
-    ]
-  },
-  {
-    // NAVBAR TARJETA 3
-    label: 'FAQ',
-    bgColor: '#333446',
-    textColor: '#EAEFEF',
-    links: [
-      { label: 'Preguntas Generales', href: '/faq#generales', ariaLabel: 'Lee las preguntas generales' },
-      { label: 'Soporte', href: '/faq#soporte', ariaLabel: 'Encuentra ayuda en soporte' }
-    ]
-  }
-];
 
 function HomePage() {
 
@@ -110,6 +78,10 @@ function HomePage() {
         <div className="homepage">
             <Navbar />
             <Banner />
+            <DescriptionBox
+            title=""
+            description="Aqualert es una plataforma tecnológica desarrollada para monitorear, analizar y alertar sobre la calidad del agua en ecosistemas marino-costeros y cuerpos de agua locales, impulsando la participación comunitaria, la toma de decisiones informadas y la conservación ambiental."
+            />
             <ForumsSection />
             <p style={{textAlign: "center", marginTop:"2rem", color:"#555"}}>
                 {apiMessage && `Mensaje de la API: ${apiMessage}`}

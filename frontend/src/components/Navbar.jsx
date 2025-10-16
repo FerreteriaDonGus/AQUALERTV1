@@ -1,5 +1,6 @@
 import React from "react";
 import CardNav from "../components/CardNav";
+import logo from "../assets/Logo.png";
 
 const navItems = [
   {
@@ -7,7 +8,7 @@ const navItems = [
     bgColor: "#333446",
     textColor: "#EAEFEF",
     links: [
-      { label: "Nuestra Misión", href: "/nosotros", ariaLabel: "Conoce nuestro proyecto" },
+      { label: "Nuestra Misión", href: "/mision", ariaLabel: "Conoce nuestro proyecto" },
       { label: "Contacto", href: "/contacto", ariaLabel: "Ponte en contacto con nosotros" },
     ],
   },
@@ -34,7 +35,7 @@ const navItems = [
 function Navbar() {
   return (
     <CardNav
-      logo={"Aqualert"}
+      logo={logo}
       items={navItems}
       baseColor="rgba(30, 30, 42, 0.6)"
       menuColor="#EAEFEF"
