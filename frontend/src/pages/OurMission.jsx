@@ -21,7 +21,7 @@ function OurMission() {
             <div className="Mision">
             <Navbar />
             <DescriptionBox
-            title=" La Misión de AquaAlert"
+            title="La Misión de AquaAlert"
             description="Somos un equipo de estudiantes de Ingeniería en Ciencias Computacionales con una misión clara: utilizar la tecnología para proteger a la comunidad y al medio ambiente.
 
                         AquaAlert nació de una necesidad fundamental: hacer que la información crítica sobre la calidad del agua y los riesgos de contaminación sea fácilmente accesible para todos.
