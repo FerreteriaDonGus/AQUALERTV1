@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import ForumsSection from "../components/ForumsSection";
 import CardNav from "../components/CardNav";
 import AnimatedList from "../components/AnimatedList";
+import { Router } from "react-router-dom";
+import LightRays from "../components/LightRaysBackground";
 
 const navItems = [
   {
@@ -33,18 +35,48 @@ const navItems = [
     textColor: '#EAEFEF',
     links: [
       { label: 'Preguntas Generales', href: '/faq#generales', ariaLabel: 'Lee las preguntas generales' },
-      { label: 'Soporte', href: '/faq#soporte', ariaLabel: 'Encuentra ayuda en soporte' }
+      { label: 'Soporte', href: '/faq#soporte', ariaLabel: 'Encuenra ayuda en soporte' }
     ]
   }
 ];
 
 function MapsPage() {
-    return (
-        <div className="maps-page">
-            <h1>Mapas y Data Center</h1>
-            <p>Contenido relacionado con mapas y data center.</p>
+    
+    const [apiMessage, setApiMessage] = useState("");
+
+    useEffect(() => {
+            fetch("/api")
+        .then((res) => res.json())
+        .then((data) => setApiMessage(data.message))
+        .catch((err) => console.error("Error fetching API message:", err));
+        }, []);
+    
+        console.log("API Message:", apiMessage);
+
+        return(
+            <div className="Mapas">
+             <CardNav 
+                logo={"Aqualert"} 
+                items={navItems}
+                baseColor="rgba(30, 30, 42, 0.6)" 
+                menuColor="#EAEFEF"
+                buttonBgColor="#7F8CAA"         
+                buttonTextColor="#EAEFEF"
+            />
+            <Banner />
+            <ForumsSection />
+            <p style={{textAlign: "center", marginTop:"2rem", color:"#555"}}>
+                {apiMessage && `Mensaje de la API: ${apiMessage}`}
+            </p>
+            <AnimatedList
+              items={anListitems}
+              onItemSelect={(item, index) => console.log(item, index)}
+              showGradients={true}
+              enableArrowNavigation={true}
+              displayScrollbar={true}
+/>
         </div>
-    );
+        )
 }
 
 export default MapsPage;
