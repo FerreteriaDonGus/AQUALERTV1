@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Logo.png";
 import './CardNav.css';
 
 const CardNav = ({
@@ -150,7 +150,7 @@ const CardNav = ({
             <div className="nav-buttons-container"/>
             {/*placeholder para logo*/}
                 <button type="button" className="card-nav-logo-button" aria-label="volver a pagina principal">
-                    <img src={Logo}/>
+                    <img src={Logo} alt="Logo"/>
                 </button>
             </div>
          
