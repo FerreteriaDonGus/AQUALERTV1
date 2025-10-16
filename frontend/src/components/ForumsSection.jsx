@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ForumsSection.css";
 
 function ForumsSection() {
@@ -9,9 +10,9 @@ function ForumsSection() {
                 <a href="/informacion" className="forum-link">
                 informacion
                 </a>
-                <a href="/mapas" className="forum-link">
-                Data center y mapas
-                </a>
+                <Link to="/mapas" className="forum-link">
+                Mapas y Data Center
+                </Link>
             </div>
         </div>
     );
