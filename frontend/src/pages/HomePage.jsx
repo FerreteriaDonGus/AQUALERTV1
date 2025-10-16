@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import ForumsSection from "../components/ForumsSection";
-import CardNav from "../components/CardNav";
 import AnimatedList from "../components/AnimatedList";
+import Navbar from "../components/Navbar";
 
 const anListitems = [
   {
@@ -108,14 +108,7 @@ function HomePage() {
 
     return (
         <div className="homepage">
-             <CardNav 
-                logo={"Aqualert"} 
-                items={navItems}
-                baseColor="rgba(30, 30, 42, 0.6)" 
-                menuColor="#EAEFEF"
-                buttonBgColor="#7F8CAA"         
-                buttonTextColor="#EAEFEF"
-            />
+            <Navbar />
             <Banner />
             <ForumsSection />
             <p style={{textAlign: "center", marginTop:"2rem", color:"#555"}}>

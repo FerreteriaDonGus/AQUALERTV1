@@ -1,0 +1,32 @@
+.description-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.description-box-content {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.05); /* Fondo translúcido */
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px); /* Efecto de desenfoque */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.description-box h2 {
+  font-size: 2rem;
+  color: #EAEFEF;
+  margin-bottom: 1rem;
+}
+
+.description-box p {
+  font-size: 1rem;
+  color: #EAEFEF;
+  line-height: 1.5;
+}
