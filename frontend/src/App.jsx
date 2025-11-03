@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MapsPage from "./pages/MapsPage";
 import OurMission from "./pages/OurMission";
+import Registro from "./pages/Registro"; 
 import LightRaysBackground from "./components/LightRaysBackground";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/mapas" element={<MapsPage />} />
         <Route path="/mision" element={<OurMission />} />
+        <Route path="/registro" element={<Registro />} />
       </Routes>
     </Router>
   );
