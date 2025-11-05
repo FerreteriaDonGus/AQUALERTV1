@@ -21,11 +21,11 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     pass_hash = db.Column(db.String(255), nullable=False)
+    biografia = db.Column(db.Text, nullable=True)  # Nueva columna para la biografía del usuario
     rol_id = db.Column(db.Integer, db.ForeignKey("roles.id_rol"), nullable=False)
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
     activo = db.Column(db.Boolean, default=True)
     
-    # Posts creados por el usuario
     posts_pendientes = db.relationship(
         "PendingPost",
         backref=db.backref("autor", lazy=True),
@@ -33,7 +33,6 @@ class User(db.Model):
         foreign_keys="PendingPost.usuario_id"
     )
     
-    # Posts revisados por el usuario (como admin)
     posts_revisados = db.relationship(
         "PendingPost",
         backref=db.backref("revisor", lazy=True),
@@ -41,7 +40,6 @@ class User(db.Model):
         foreign_keys="PendingPost.admin_revisor_id"
     )
     
-    # Posts publicados por el usuario
     posts_publicados = db.relationship(
         "PublishedPost",
         backref=db.backref("autor", lazy=True),
