@@ -1,0 +1,81 @@
+.registro-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.registro-form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #EAEFEF;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #EAEFEF;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    background-color: #333446;
+    color: #EAEFEF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #4a4b63;
+}
+
+.message {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 4px;
+}
+
+.message.error {
+    background-color: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.message.success {
+    background-color: rgba(142, 224, 142, 0.1);
+    color: #8ee08e;
+    border: 1px solid rgba(142, 224, 142, 0.2);
+}

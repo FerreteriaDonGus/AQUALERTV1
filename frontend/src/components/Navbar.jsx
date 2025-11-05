@@ -1,6 +1,6 @@
 import React from "react";
-import CardNav from "../components/CardNav";
-import logo from "../assets/Logo.png";
+import CardNav from "./CardNav";
+import logo from "../assets/logo.png";
 
 const navItems = [
   {
@@ -17,7 +17,7 @@ const navItems = [
     bgColor: "#333446",
     textColor: "#EAEFEF",
     links: [
-      { label: "Mapas Interactivos", href: "/mapas/interactivo", ariaLabel: "Revisa mapas los mapas de organizaciones oficiales" },
+      { label: "Mapas Interactivos", href: "/mapas", ariaLabel: "Revisa mapas los mapas de organizaciones oficiales" },
       { label: "Galería", href: "/mapas/galeria", ariaLabel: "Ve la galería de mapas" },
     ],
   },
@@ -32,11 +32,11 @@ const navItems = [
   },
 ];
 
-function Navbar() {
+export default function Navbar() {
   return (
     <CardNav
-      logo={logo}
       items={navItems}
+      logo={logo}
       baseColor="rgba(30, 30, 42, 0.6)"
       menuColor="#EAEFEF"
       buttonBgColor="#7F8CAA"
@@ -44,5 +44,3 @@ function Navbar() {
     />
   );
 }
-
-export default Navbar;

@@ -1,16 +1,14 @@
 import React from "react";
 import "./Banner.css";
 
-function Banner() {
+function Banner({ title = "Aqua alert", subtitle = "Identifica riesgos, recibe alertas, actúa.", className = "" }) {
     return (
-        <div className="banner">
-            <div className="banner-content">
-                <h1>Aqua alert</h1>
-                <p>
-                    Identifica riesgos, recibe alertas, actúa.
-                </p>
+        <div className={`component-container ${className}`}>
+            <div className="component-content banner-content component-pad">
+                <h1>{title}</h1>
+                <p>{subtitle}</p>
+            </div>
         </div>
-    </div>
     );
 }
 

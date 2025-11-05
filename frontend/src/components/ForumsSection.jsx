@@ -4,15 +4,17 @@ import "./ForumsSection.css";
 
 function ForumsSection() {
     return (
-        <div className="forums-section">
-            <h2>Foros de Discusión</h2>
-            <div className="forum-links">
-                <a href="/informacion" className="forum-link">
-                informacion
-                </a>
-                <Link to="/mapas" className="forum-link">
-                Mapas y Data Center
-                </Link>
+        <div className="component-container">
+            <div className="component-content forums-section component-pad">
+                <h2>Foros de Discusión</h2>
+                <div className="forum-links">
+                    <Link to="/informacion" className="forum-link" aria-label="Ir a información">
+                        Información
+                    </Link>
+                    <Link to="/mapas" className="forum-link" aria-label="Ir a mapas y centro de datos">
+                        Mapas y Data Center
+                    </Link>
+                </div>
             </div>
         </div>
     );

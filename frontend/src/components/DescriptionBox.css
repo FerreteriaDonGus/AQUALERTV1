@@ -1,6 +1,6 @@
 .description-box {
   width: 100%;
-  margin-top: 6em;
+  margin-top: 3.5rem; /* menos separación por defecto */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,21 +13,32 @@
 
 .description-box-content {
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.05); /* Fondo translúcido */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem 2rem;
   border-radius: 10px;
-  backdrop-filter: blur(6px); /* Efecto de desenfoque */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .description-box h2 {
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   color: #EAEFEF;
   margin-bottom: 1rem;
 }
 
 .description-box p {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
   color: #EAEFEF;
   line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .description-box {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+  .description-box-content {
+    padding: 1rem;
+  }
 }

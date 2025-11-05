@@ -1,5 +1,6 @@
 from extensions import db
 from datetime import datetime
+from werkzeug.security import check_password_hash, generate_password_hash
 
 class Rol(db.Model):
     __tablename__ = "roles"
@@ -24,8 +25,35 @@ class User(db.Model):
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
     activo = db.Column(db.Boolean, default=True)
     
-    posts_pendientes = db.relationship("PendingPost", backref="usuario", lazy=True)
-    posts_publicados = db.relationship("PublishedPost", backref="usuario", lazy=True)
+    # Posts creados por el usuario
+    posts_pendientes = db.relationship(
+        "PendingPost",
+        backref=db.backref("autor", lazy=True),
+        lazy=True,
+        foreign_keys="PendingPost.usuario_id"
+    )
+    
+    # Posts revisados por el usuario (como admin)
+    posts_revisados = db.relationship(
+        "PendingPost",
+        backref=db.backref("revisor", lazy=True),
+        lazy=True,
+        foreign_keys="PendingPost.admin_revisor_id"
+    )
+    
+    # Posts publicados por el usuario
+    posts_publicados = db.relationship(
+        "PublishedPost",
+        backref=db.backref("autor", lazy=True),
+        lazy=True,
+        foreign_keys="PublishedPost.usuario_id"
+    )
+    
+    def set_password(self, raw_password):
+        self.pass_hash = generate_password_hash(raw_password, method="pbkdf2:sha256", salt_length=8)
+    
+    def check_password(self, raw_password):
+        return check_password_hash(self.pass_hash, raw_password)
     
     def __repr__(self):
         return f"<User {self.username}>"

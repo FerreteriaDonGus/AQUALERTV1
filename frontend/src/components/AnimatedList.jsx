@@ -101,6 +101,8 @@ const AnimatedList = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
+    <div className="component-container">
+      <div className="component-content">
     <div className={`scroll-list-container ${className}`}>
       <div ref={listRef} className={`scroll-list ${!displayScrollbar ? 'no-scrollbar' : ''}`} onScroll={handleScroll}>
         {items.map((item, index) => (
@@ -130,6 +132,8 @@ const AnimatedList = ({
           <div className="bottom-gradient" style={{ opacity: bottomGradientOpacity }}></div>
         </>
       )}
+        </div>
+      </div>
     </div>
   );
 };

@@ -9,7 +9,12 @@ CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
 
 db.init_app(app)
 
+# Importar modelos y rutas
 from models import Rol, User, PendingPost, PublishedPost
+from routes.auth import bp as auth_bp
+
+# Registrar blueprints
+app.register_blueprint(auth_bp)
 
 @app.route("/api")
 def home():

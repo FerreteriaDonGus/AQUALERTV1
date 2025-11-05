@@ -1,11 +1,7 @@
 .forums-section {
-  width: 90%;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem 2.5rem;
-  text-align: left;
-  border-radius: 12px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -19,17 +15,19 @@
 }
 
 .forums-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--gutter);
   color: #EAEFEF;
+  padding: 0 var(--gutter);
 }
 
 .forum-links {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: var(--gutter);
+  width: 100%;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
 }
 
 .forum-link {
@@ -37,11 +35,13 @@
   font-weight: bold;
   color: #EAEFEF;
   border: 0px transparent;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
+  padding: calc(var(--gutter) * 0.75) var(--gutter);
+  /*border-radius: 10px;*/
   transition: all 0.3s ease;
   background-color: #333446;
-  width: 95%;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 

@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import DescriptionBox from "../components/DescriptionBox";
 import ItemContainer from "../components/ItemContainer";
+import PageLayout from "../components/PageLayout";
 
 
 
@@ -20,6 +21,8 @@ function MapsPage() {
         console.log("API Message:", apiMessage);
 
         return(
+          <PageLayout>
+
             <div className="Mapas">
             <Navbar />
             <DescriptionBox
@@ -39,6 +42,8 @@ function MapsPage() {
             ]}
             />
         </div>
+
+          </PageLayout>
         );
 }
 

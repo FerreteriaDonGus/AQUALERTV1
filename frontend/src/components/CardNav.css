@@ -3,8 +3,10 @@
   top: 2em;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 900px; 
+  width: 100%;
+  max-width: var(--content-width);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
   z-index: 99;
   box-sizing: border-box;
 }
@@ -111,6 +113,10 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-nav-cta-button:hover {

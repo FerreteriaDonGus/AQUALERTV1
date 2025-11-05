@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Logo from "../assets/Logo.png";
+import { Link } from 'react-router-dom';
 import './CardNav.css';
 
 const CardNav = ({
@@ -155,13 +156,9 @@ const CardNav = ({
             </div>
          
 
-          <button
-            type="button"
-            className="card-nav-cta-button"
-            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-          >
+          <Link to="/registro" className="card-nav-cta-button" style={{ backgroundColog: buttonBgColor, color: buttonTextColor }}>
             Unete
-          </button>
+          </Link>
         </div>
 
         <div className="card-nav-content" aria-hidden={!isExpanded}>
