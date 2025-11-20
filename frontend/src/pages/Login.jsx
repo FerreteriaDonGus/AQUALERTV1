@@ -2,6 +2,7 @@ import React from "react";
 import PageLayout from "../components/PageLayout";
 import LoginForm from "../components/LoginForm";
 import "./Registro.css";
+import { Link } from "react-router-dom"
 
 function Login() {
     return (
@@ -11,6 +12,9 @@ function Login() {
                     <div className="registro-card">
                         <h1>Iniciar sesión</h1>
                         <LoginForm />
+                        <p>
+                            <Link></Link>
+                        </p>
                     </div>
                 </div>
             </div>

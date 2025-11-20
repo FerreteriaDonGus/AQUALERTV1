@@ -1,4 +1,4 @@
-.mission-page {
+.maps-page {
     width: 100%;
     min-height: 100vh;
 }
@@ -13,10 +13,16 @@
     padding-bottom: 4rem;
 }
 
-.mission-content {
+.maps-window {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 760px;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem auto;
+}
+
+.maps-card {
+    width: 100%;
     background: rgba(255,255,255,0.04);
     border-radius: 12px;
     padding: 2rem;
@@ -25,20 +31,14 @@
     border: 1px solid rgba(255,255,255,0.06);
 }
 
-.mission-content h1 {
-    color: #EAEFEF;
+.maps-card h1 {
+    margin: 0 0 1rem 0;
     text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.mission-content p {
     color: #EAEFEF;
-    line-height: 1.6;
-    margin-bottom: 1rem;
 }
 
 @media (max-width: 480px) {
-    .mission-content {
+    .maps-card {
         padding: 1rem;
     }
 }

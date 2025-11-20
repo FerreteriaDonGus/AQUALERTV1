@@ -151,7 +151,9 @@ const CardNav = ({
             <div className="nav-buttons-container"/>
             {/*placeholder para logo*/}
                 <button type="button" className="card-nav-logo-button" aria-label="volver a pagina principal">
-                    <img src={Logo} alt="Logo"/>
+                    <Link to="/" >
+                      <img src={Logo} alt="Logo"/>
+                    </Link>
                 </button>
             </div>
          

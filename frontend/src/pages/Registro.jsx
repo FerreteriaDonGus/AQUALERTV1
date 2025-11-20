@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
 import RegistroForm from "../components/RegistroForm";
 import "./Registro.css";
+import { Link } from "react-router-dom"
 
 function Registro() {
     const [formData, setFormData] = useState({
@@ -49,6 +50,10 @@ function Registro() {
                             handleSubmit={handleSubmit}
                             message={message}
                         />
+                        <p style={{ textAlign: "center", marginTop: "1.5rem"}}>
+                            Ya tiene una cuenta? {" "}
+                            <Link to="/login" style={{color: "#8ee08e", textDecoration: "underline", cursor: "pointer"}}>Iniciar Sesion</Link>
+                        </p>
                     </div>
                 </div>
             </div>
