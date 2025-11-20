@@ -17,14 +17,17 @@ class Rol(db.Model):
 class User(db.Model):
     __tablename__ = "usuarios"
     
+    # datos de usuario
+    
     id_usuario = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     pass_hash = db.Column(db.String(255), nullable=False)
-    biografia = db.Column(db.Text, nullable=True)  # Nueva columna para la biografía del usuario
+    biografia = db.Column(db.Text, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey("roles.id_rol"), nullable=False)
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
     activo = db.Column(db.Boolean, default=True)
+     
     
     posts_pendientes = db.relationship(
         "PendingPost",
@@ -48,10 +51,10 @@ class User(db.Model):
     )
     
     def set_password(self, raw_password):
-        self.pass_hash = generate_password_hash(raw_password, method="pbkdf2:sha256", salt_length=8)
+        self.pass_hash = generate_password_hash(raw_password, method="pbkdf2:sha256", salt_length=8) # metodo de hasheo, salt es un numero aleatorio 
     
     def check_password(self, raw_password):
-        return check_password_hash(self.pass_hash, raw_password)
+        return check_password_hash(self.pass_hash, raw_password) #compara el hash con la contraseña dada o cruda
     
     def __repr__(self):
         return f"<User {self.username}>"

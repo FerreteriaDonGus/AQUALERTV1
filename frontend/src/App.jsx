@@ -5,6 +5,7 @@ import MapsPage from "./pages/MapsPage";
 import OurMission from "./pages/OurMission";
 import Registro from "./pages/Registro"; 
 import LightRaysBackground from "./components/LightRaysBackground";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/mapas" element={<MapsPage />} />
         <Route path="/mision" element={<OurMission />} />
         <Route path="/registro" element={<Registro />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
