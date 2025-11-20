@@ -12,8 +12,9 @@ function Login() {
                     <div className="registro-card">
                         <h1>Iniciar sesión</h1>
                         <LoginForm />
-                        <p>
-                            <Link></Link>
+                        <p style={{ textAlign: "center", marginTop: "1.5rem"}}>
+                            Aun no esta registrado? {" "}
+                            <Link to="/registro" style={{color:"#8ee08e", textDecoration:"underline", cursor:"pointer"}}>Registrarse</Link>
                         </p>
                     </div>
                 </div>
