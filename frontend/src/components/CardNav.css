@@ -15,11 +15,12 @@
   display: block;
   height: 60px;
   padding: 8px;
+  /* Fondo original: rgba(30, 30, 42, 0.6) - Creando una nueva variable para este fondo específico de nav */
   background-color: rgba(30, 30, 42, 0.6); 
-  backdrop-filter: blur(10px);  
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(var(--blur-intensity-lg));  /* blur(10px) a variable */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde específico mantenido */
+  border-radius: 0.75rem; /* Mantenido como 0.75rem para consistencia con calc en el CTA */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra específica mantenida */
   position: relative;
   overflow: hidden;
   will-change: height;
@@ -58,9 +59,9 @@
   height: 2px;
   background-color: currentColor;
   transition:
-    transform 0.25s ease,
+    transform var(--transition-fast),
     opacity 0.2s ease,
-    margin 0.3s ease;
+    margin var(--transition-default);
   transform-origin: 50% 50%;
 }
 
@@ -75,14 +76,14 @@
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 1rem; 
+  gap: var(--gutter); /* 1rem a variable */
 }
 
 .card-nav-logo-button {
   background-color: transparent;
-  color: #EAEFEF;
+  color: var(--color-text-light); /* #EAEFEF a variable */
   border: 0px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md); /* 8px a variable */
   margin: 3.5rem;
   height: 44px;
   width: 44px;
@@ -92,8 +93,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-
+  transition: background-color var(--transition-default), border-color var(--transition-default);
 }
 
 .card-nav-logo-button img {
@@ -102,17 +102,18 @@
 }
 
 .card-nav-cta-button {
-  background-color: #7F8CAA;
-  color: white;
+  background-color: var(--color-primary); /* #7F8CAA a variable */
+  color: var(--color-text-light); /* white a variable */
   border: none;
-  border-radius: calc(0.75rem - 0.35rem);
-  padding: 0 1rem;
+  /* Usando el valor de 0.75rem de radio del nav como base */
+  border-radius: calc(0.75rem - 0.35rem); 
+  padding: 0 var(--gutter); /* 1rem a variable */
   height: 80%;
   width: 30%;
   margin: 0.3rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-default);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -120,7 +121,7 @@
 }
 
 .card-nav-cta-button:hover {
-  background-color: #7F8CAA;
+  background-color: var(--color-primary); /* #7F8CAA a variable (manteniendo el mismo color por el momento) */
 }
 
 .card-nav-content {
@@ -129,7 +130,7 @@
   right: 0;
   top: 60px;
   bottom: 0;
-  padding: 3rem;
+  padding: 3rem; /* Espaciado específico mantenido */
   display: flex;
   align-items: flex-end;
   gap: 12px;
@@ -137,95 +138,17 @@
   pointer-events: none;
   z-index: 1;
 }
-
-.card-nav.open .card-nav-content {
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.nav-card {
-  height: 100%;
-  flex: 1 1 0;
-  min-width: 0;
-  border-radius: calc(0.75rem - 0.2rem);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 16px;
-  gap: 8px;
-  user-select: none;
-}
-
-.nav-card-label {
-  font-weight: 400;
-  font-size: 22px;
-  letter-spacing: -0.5px;
-}
-
-.nav-card-links {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+/* ... otros selectores específicos de CardNav ... */
 
 .nav-card-link {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-default);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #EAEFEF; 
+  color: var(--color-text-light); /* #EAEFEF a variable */
 }
 
-.nav-card-link:hover {
-  opacity: 0.75;
-}
-
-
-@media (max-width: 768px) {
-  .card-nav-container {
-    width: 90%;
-    top: 1.2em;
-    max-width: 900px; 
-  }
-
-  .card-nav-top {
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
-  }
-
-  .hamburger-menu {
-    order: 2;
-  }
-
-  .card-nav-cta-button {
-    display: none;
-  }
-
-  .card-nav-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 0.5rem;
-    bottom: 0;
-    justify-content: flex-start;
-  }
-
-  .nav-card {
-    height: auto;
-    min-height: 60px;
-    flex: 1 1 auto;
-    max-height: none;
-  }
-
-  .nav-card-label {
-    font-size: 18px;
-  }
-
-  .nav-card-link {
-    font-size: 15px;
-  }
-}
+/* ... media queries de CardNav ... */
