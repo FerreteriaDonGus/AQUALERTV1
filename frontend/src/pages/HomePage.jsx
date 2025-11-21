@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ItemContainer from "../components/ItemContainer";
 import PageLayout from "../components/PageLayout";
 import Banner from "../components/Banner";
 import DescriptionBox from "../components/DescriptionBox";
@@ -24,8 +25,13 @@ function HomePage() {
           title="¿Qué es Aqualert?" 
           description="Una plataforma dedicada a proporcionar información sobre el estado del agua en México."
         />
-        <ForumsSection />
-        <AnimatedList items={[]} />
+        <ForumsSection/>
+        <ItemContainer
+        titulo="Publicaciones destacadas"
+        items={[
+          {imagen: "#" , descripcion: "Registros abiertos!", link: "/registro"}
+        ]}
+        />
       </div>
     </PageLayout>
   );
