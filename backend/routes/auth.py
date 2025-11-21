@@ -1,49 +1,38 @@
 from flask import Blueprint, request, jsonify
-from werkzeug.security import generate_password_hash, check_password_hash
-from sqlalchemy.exc import IntegrityError
+from werkzeug.security import check_password_hash
+from flask_jwt_extended import create_access_token
+from models import User
 from extensions import db
-from models import User, Rol
 
-bp = Blueprint("auth", __name__, url_prefix="/api")
+auth_bp = Blueprint("auth", __name__)
 
-def get_default_role():
-    role = Rol.query.filter_by(nombre="user").first()
-    if role:
-        return role.id_rol
-    
-    role = Rol(nombre="user", descripcion="Usuario por defecto")
-    db.session.add(role)
-    db.session.commit()
-    return role.id_rol
+@auth_bp.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
 
-@bp.route("/register", methods=["POST"])
-def register():
-    data = request.get_json() or {}
-    username = (data.get("username") or "").strip()
-    email = (data.get("email") or "").strip()
-    password = data.get("password") or ""
-    
-    if not username or not email or not password:
-        return jsonify({"error": "Faltan campos obligatorios"}), 400
-    
-    if "@" not in email:
-        return jsonify({"error": "Email inválido"}), 400
-    
-    try:
-        rol_id = get_default_role()
-        pw_hash = generate_password_hash(password, method="pbkdf2:sha256", salt_length=8)
-        
-        user = User(username=username, email=email, pass_hash=pw_hash, rol_id=rol_id)
-        db.session.add(user)
-        db.session.commit()
-    except IntegrityError as e:
-        db.session.rollback()
-        
-        return jsonify({"error": "Nombre de usuario o email ya registrados"}), 400
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({"error": "Error interno del servidor"}), 500
-    
-    return jsonify({"message": "Usuario registrado exitosamente"}), 201
+    email = data.get("email")
+    password = data.get("password")
 
-    
+    if not email or not password:
+        return jsonify({"error": "Faltan datos"}), 400
+
+    user = User.query.filter_by(email=email).first()
+
+    if not user:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+
+    if not check_password_hash(user.pass_hash, password):
+        return jsonify({"error": "Contraseña incorrecta"}), 401
+
+    # generacion token jwt
+    token = create_access_token(identity=user.id)
+
+    return jsonify({
+        "message": "Login exitoso",
+        "token": token,
+        "user": {
+            "id": user.id,
+            "email": user.email,
+            "username": user.username
+        }
+    }), 200

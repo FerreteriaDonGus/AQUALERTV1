@@ -1,9 +1,10 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        "DATABASE_URL",
-        "mysql+pymysql://root:promar@localhost/portal_aqualert"
-    )
+    LLAVE_SECRETA = os.environ.get("LLAVE_SECRETA") or "dev-secret"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = os.environ.get("SECRET_KEY", "aqualert123")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DB_URI") or "mysql+pymsql://root:@localhost/aqualert"
+    
+    JWT_LLAVE_SECRETA = os.environ.get("JWT_LLAVE_SECRETA") or "llavedefaultjwt666" # llave para JWT
+    
+    

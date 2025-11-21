@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ItemContainer.css"
 
 function ItemContainer({titulo, items=[]}){
-  const esExterno = (url) => /^https?:\/\//i.test(url);
+  const esExterno = (url) => /^https?:\/\//i.test(url); //corregido test no text
   
   return (
     <div className="component-container">
