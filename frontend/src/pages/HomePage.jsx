@@ -29,7 +29,8 @@ function HomePage() {
         <ItemContainer
         titulo="Publicaciones destacadas"
         items={[
-          {imagen: "#" , descripcion: "Registros abiertos!", link: "/registro"}
+          {imagen: "#" , descripcion: "Registros abiertos!", link: "/registro"},
+          {imagen: "#" , descripcion: "Simar web oficial", link: "https://simar.conabio.gob.mx/"}
         ]}
         />
       </div>

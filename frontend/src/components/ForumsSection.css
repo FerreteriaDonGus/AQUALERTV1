@@ -1,10 +1,13 @@
 .forums-section {
+  position: relative;
   width: 100%;
+  max-width: var(--content-width); 
+  background: var(--color-bg-translucent-light); 
+  border-radius: var(--border-radius-lg);
   background: var(--color-bg-translucent-light); /* Fondo translúcido a variable */
   border-radius: var(--border-radius-lg); /* 12px a variable */
   backdrop-filter: blur(var(--blur-intensity-md)); /* blur(6px) a variable */
   box-shadow: var(--shadow-component-lg); /* Sombra a variable */
-  position: relative;
   z-index: 10;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
