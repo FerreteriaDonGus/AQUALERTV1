@@ -22,7 +22,7 @@ class User(db.Model):
     id_usuario = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    pass_hash = db.Column(db.String(255), nullable=False)
+    pass_hash = db.Column(db.String(128), nullable=False) #antes era 255, se cambio a 128 por recomendacion de chat
     biografia = db.Column(db.Text, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey("roles.id_rol"), nullable=False)
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
