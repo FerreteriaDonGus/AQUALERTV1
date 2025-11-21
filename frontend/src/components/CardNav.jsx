@@ -12,6 +12,7 @@ const CardNav = ({
   menuColor,
   buttonBgColor,
   buttonTextColor,
+  logo,
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -152,13 +153,13 @@ const CardNav = ({
             {/*placeholder para logo*/}
                 <button type="button" className="card-nav-logo-button" aria-label="volver a pagina principal">
                     <Link to="/" >
-                      <img src={Logo} alt="Logo"/>
+                      <img src={logo} alt="Logo"/>
                     </Link>
                 </button>
             </div>
          
 
-          <Link to="/registro" className="card-nav-cta-button" style={{ backgroundColog: buttonBgColor, color: buttonTextColor }}>
+          <Link to="/registro" className="card-nav-cta-button" style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}>
             Unete
           </Link>
         </div>

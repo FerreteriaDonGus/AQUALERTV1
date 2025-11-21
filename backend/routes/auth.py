@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
-from models import User, Role
+from models import User, Rol
 from extensions import db
 
 auth_bp = Blueprint("auth", __name__)
@@ -21,9 +21,9 @@ def register():
     if User.query.filter_by(email=email).first():
         return jsonify({"error": "Este correo ya esta registrado"}), 400
     
-    role = Role.query.filter_by(name="user").first()
+    role = Rol.query.filter_by(name="user").first()
     if not role:
-        role = Role(name="user")
+        role = Rol(name="user")
         db.session.add(role)
         db.session.commit()
     
