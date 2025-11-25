@@ -24,7 +24,7 @@ function ItemContainer({titulo, items=[]}){
 
               return (
                 <Wrapper key={i} className="item clickable-item" {...wrapperProps}>
-                  <div className="item-backgroupd" style={{backgroundImage: `url(${imagen})`}}/>
+                  <div className="item-background" style={{backgroundImage: `url(${imagen})`}}/>
                   <div className="item-card">
                     <span className="item-link">{descripcion}</span>
                   </div>

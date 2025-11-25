@@ -21,59 +21,74 @@ const CardNav = ({
   const tlRef = useRef(null);
 
   const calculateHeight = () => {
-    const navEl = navRef.current;
-    if (!navEl) return 260;
+  const navEl = navRef.current;
+  // Un valor base seguro por si algo falla antes de montar
+  if (!navEl) return 320; 
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      const contentEl = navEl.querySelector('.card-nav-content');
-      if (contentEl) {
-        const wasVisible = contentEl.style.visibility;
-        const wasPointerEvents = contentEl.style.pointerEvents;
-        const wasPosition = contentEl.style.position;
-        const wasHeight = contentEl.style.height;
+  const contentEl = navEl.querySelector('.card-nav-content');
+  if (!contentEl) return 320;
 
-        contentEl.style.visibility = 'visible';
-        contentEl.style.pointerEvents = 'auto';
-        contentEl.style.position = 'static';
-        contentEl.style.height = 'auto';
+  // 1. Guardamos el estado actual para restaurarlo después
+  const wasVisible = contentEl.style.visibility;
+  const wasPointerEvents = contentEl.style.pointerEvents;
+  const wasPosition = contentEl.style.position;
+  const wasHeight = contentEl.style.height;
+  const wasDisplay = contentEl.style.display;
 
-        contentEl.offsetHeight;
+  // 2. Hacemos el elemento "medible" temporalmente
+  // (GSAP a veces lo tiene oculto, así que forzamos su visualización para leer la altura)
+  contentEl.style.visibility = 'hidden'; // Oculto al ojo pero renderizado
+  contentEl.style.position = 'absolute';
+  contentEl.style.display = 'flex'; // Aseguramos que respete el flexbox
+  contentEl.style.height = 'auto';
 
-        const topBar = 60;
-        const padding = 16;
-        const contentHeight = contentEl.scrollHeight;
+  // 3. Medimos la altura real del contenido interno
+  const contentHeight = contentEl.scrollHeight;
+  
+  // 4. Restauramos los estilos originales inmediatamente
+  contentEl.style.visibility = wasVisible;
+  contentEl.style.pointerEvents = wasPointerEvents;
+  contentEl.style.position = wasPosition;
+  contentEl.style.height = wasHeight;
+  contentEl.style.display = wasDisplay;
 
-        contentEl.style.visibility = wasVisible;
-        contentEl.style.pointerEvents = wasPointerEvents;
-        contentEl.style.position = wasPosition;
-        contentEl.style.height = wasHeight;
+  // 5. Calculamos: Altura Barra Superior (60px) + Contenido + Un pequeño margen extra
+  const topBarHeight = 60; 
+  const paddingBottom = 10; // Un respiro extra al final para que no se vea apretado
 
-        return topBar + contentHeight + padding;
-      }
-    }
-    return 260;
-  };
+  return topBarHeight + contentHeight + paddingBottom;
+};
 
   const createTimeline = () => {
-    const navEl = navRef.current;
-    if (!navEl) return null;
+  const navEl = navRef.current;
+  if (!navEl) return null;
 
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
-    gsap.set(cardsRef.current, { y: 50, opacity: 0 });
+  // Estado inicial tl
+  gsap.set(navEl, { height: 60, overflow: 'hidden' });
+  gsap.set(cardsRef.current, { y: 50, opacity: 0 });
 
-    const tl = gsap.timeline({ paused: true });
+  const tl = gsap.timeline({ 
+    paused: true,
+    // CUANDO TERMINE DE ABRIRSE: Permitir que el contenido salga (desplegables, sombras)
+    onComplete: () => {
+      gsap.set(navEl, { overflow: 'visible' });
+    },
+    // CUANDO EMPIECE A CERRARSE (REVERSA): Ocultar el desborde de nuevo
+    onReverseStart: () => {
+      gsap.set(navEl, { overflow: 'hidden' });
+    }
+  });
 
-    tl.to(navEl, {
-      height: calculateHeight,
-      duration: 0.4,
-      ease
-    });
+  tl.to(navEl, {
+    height: calculateHeight, // Funcion de calculo
+    duration: 0.25,
+    ease
+  });
 
-    tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
+  tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.25, ease, stagger: 0.05 }, '-=0.1');
 
-    return tl;
-  };
+  return tl;
+};
 
   useLayoutEffect(() => {
     const tl = createTimeline();
