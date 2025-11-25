@@ -19,16 +19,14 @@
 
 .item-container {
   width: 100%;
-  max-width: var(--content-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: calc(var(--gutter) * 2); /* 2rem a variable */
-  margin: 0 auto;
-  background: var(--color-bg-translucent-light); /* Fondo translúcido a variable */
-  border-radius: var(--border-radius-lg); /* 12px a variable */
-  backdrop-filter: blur(var(--blur-intensity-md)); /* Efecto de desenfoque a variable */
-  box-shadow: var(--shadow-component-lg); /* Sombra suave a variable */
+  padding: var(--component-padding); /* tuve q poner esto para el padding global */
+  background: var(--color-bg-translucent-light);
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(var(--blur-intensity-md));
+  box-shadow: var(--shadow-component-lg);
   z-index: 10;
   box-sizing: border-box;
 }

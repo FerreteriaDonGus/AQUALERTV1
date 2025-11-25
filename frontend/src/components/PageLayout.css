@@ -81,3 +81,7 @@
   gap: calc(var(--gutter) * 2); /* 2rem se convierte en variable */
   padding-bottom: 4rem;
 }
+
+.page-content.no-top-padding{
+  padding: 0;
+}

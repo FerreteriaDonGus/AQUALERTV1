@@ -1,6 +1,7 @@
-.maps-page {
-    width: 100%;
-    min-height: 100vh;
+.page-inner {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gutter) * 3);
 }
 
 .page-inner {
@@ -35,6 +36,11 @@
     margin: 0 0 1rem 0;
     text-align: center;
     color: #EAEFEF;
+}
+
+#mapas {
+  scroll-margin-top: 130px;
+  margin-top: 12.2rem;
 }
 
 @media (max-width: 480px) {
