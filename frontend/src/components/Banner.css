@@ -101,11 +101,11 @@
 .banner-content {
   max-width: var(--content-width);
   width: 100%;
-  background: var(--color-bg-translucent-light);
+  background: rgba(0, 0, 0, 0);
   padding: calc(var(--gutter) * 2) 2.5rem;
   border-radius: var(--border-radius-lg);
-  backdrop-filter: blur(var(--blur-intensity-md));
-  box-shadow: var(--shadow-component-lg);
+  /*backdrop-filter: blur(var(--blur-intensity-md));*/
+  /*box-shadow: var(--shadow-component-lg);*/
   box-sizing: border-box;
 }
 

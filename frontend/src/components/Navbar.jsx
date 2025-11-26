@@ -8,8 +8,7 @@ const navItems = [
     bgColor: "#333446",
     textColor: "#EAEFEF",
     links: [
-      { label: "Nuestra Misión", href: "/mision", ariaLabel: "Conoce nuestro proyecto" },
-      { label: "Contacto", href: "/contacto", ariaLabel: "Ponte en contacto con nosotros" },
+      { label: "Contacto", href: "/contacto", ariaLabel: "Ponte en contacto con nosotros" }
     ],
   },
   {
@@ -17,8 +16,7 @@ const navItems = [
     bgColor: "#333446",
     textColor: "#EAEFEF",
     links: [
-      { label: "Mapas Interactivos", href: "/mapas", ariaLabel: "Revisa mapas los mapas de organizaciones oficiales" },
-      { label: "Galería", href: "/mapas/galeria", ariaLabel: "Ve la galería de mapas" },
+      { label: "Mapas Interactivos", href: "/mapas", ariaLabel: "Revisa mapas los mapas de organizaciones oficiales" }
     ],
   },
   {

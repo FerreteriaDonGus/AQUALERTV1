@@ -11,12 +11,17 @@ import "./HomePage.css";
 
 //assets importaciones
 import post1 from "../assets/estaticas/post1.jpg"
+import post2 from "../assets/estaticas/regisscreen.png"
 import simarlogo from "../assets/estaticas/externas/simarlogo.png"
 import simarpreview from "../assets/estaticas/externas/simarpreview.png"
 import pestatic from "../assets/estaticas/externas/estatico_1.png"
 import pestatic_2 from "../assets/estaticas/externas/estatico_2.png"
 import presentacion_pdf from "../assets/estaticas/documentos/pdf_01-1.png"
-import banner_prestado from "../assets/estaticas/sea-3058780_1920.jpg"
+import banner_prestado from "../assets/estaticas/poolpvz.png"
+import carouse2 from "../assets/estaticas/externas/inegi.png"
+import banner_video from "../assets/estaticas/externas/Videos/medusonas.mp4"
+import ninopepenando from "../assets/estaticas/placeholders/nino_pepenador.jpg"
+
 
 function HomePage() {
   const [apiMessage, setApiMessage] = useState("");
@@ -30,7 +35,7 @@ function HomePage() {
 
   return (
     <PageLayout>
-      <Banner fullScreen backgroundImage={banner_prestado} scrollToId="descripcion" title="AquaAlert" subtitle="Identifica, conoce y actua"/>
+      <Banner fullScreen backgroundImage={banner_prestado} backgroundVideo={banner_video} scrollToId="descripcion" title="AquaAlert" subtitle="Identifica, conoce y actua"/>
       <div className="page-inner">
         <div></div>
         <DescriptionBox
@@ -41,9 +46,14 @@ function HomePage() {
         <Carousel
           items={[
             {
-              imagen: post1,
-              descripcion: "Registrate para que no ocurra literalmente nada!!1!",
+              imagen: ninopepenando,
+              descripcion: "Registros abiertos!",
               link: "/registro"
+            },
+            {
+              imagen: carouse2,
+              descripcion: "Mapas de hidrología de la INEGI",
+              Link: "https://www.inegi.org.mx/temas/hidrologia/#mapas"
             }
             
           ]}
@@ -52,7 +62,7 @@ function HomePage() {
         <ItemContainer
         titulo="Publicaciones destacadas"
         items={[
-          {imagen: post1 , descripcion: "Registros abiertos!", link: "/registro"},
+          {imagen: post2 , descripcion: "Registros abiertos!", link: "/registro"},
           {imagen: simarpreview , descripcion: "Simar web oficial", link: "https://simar.conabio.gob.mx/"},
           {imagen: pestatic, descripcion: "Tendencias en los cuerpos de agua a nivel nacional 2024", link: "https://www.biodiversidad.gob.mx/monitoreo/simoh-mx/cuerpos-de-agua"},
           {imagen: pestatic_2, descripcion: "Situación del agua en México por IMCO.org.mx", link: "https://imco.org.mx/situacion-del-agua-en-mexico/"}

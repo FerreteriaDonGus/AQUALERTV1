@@ -11,10 +11,10 @@
   
   /* Colors */
   --color-text-light: #EAEFEF; /* Texto principal claro (casi blanco) */
-  --color-text-dark: #333;      /* Texto principal oscuro (para items internos) */
-  --color-primary: #7F8CAA;     /* Color de acento/interacción (hover, selected) */
-  --color-bg-dark-base: #333446; /* Color de fondo sólido oscuro */
-  --color-bg-translucent-light: rgba(255, 255, 255, 0.05); /* Base para componentes translúcidos */
+  --color-text-dark: #1B3C53;      /* Texto principal oscuro (para items internos) */
+  --color-primary: #D2C1B6;     /* Color de acento/interacción (hover, selected) */
+  --color-bg-dark-base: #456882; /* Color de fondo sólido oscuro */
+  --color-bg-translucent-light: rgba(210, 193, 182, 0.10); /* Base para componentes translúcidos */
   --color-bg-card-hover: rgba(255, 255, 255, 0.9); /* Fondo de tarjeta claro (ej. ItemContainer) */
 
   /* Borders & Effects */

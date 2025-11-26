@@ -7,6 +7,7 @@ function Banner({
   className = "",
   fullScreen = false,
   backgroundImage = null,
+  backgroundVideo = null, // <--- Nueva prop para el video
   scrollToId = null,
 }) {
   const handleScroll = () => {
@@ -20,13 +21,30 @@ function Banner({
   return (
     <div
       className={`banner-wrapper ${fullScreen ? "fullscreen" : ""}`}
+      // Solo aplicamos el estilo de fondo inline si NO hay video
+      // Si hay video, la imagen se usa como 'poster' en la etiqueta video
       style={
-        backgroundImage
+        !backgroundVideo && backgroundImage
           ? { backgroundImage: `url(${backgroundImage})` }
           : undefined
       }
     >
-      {/* blur */}
+      {/* Si hay video, lo ponemos aquí como fondo */}
+      {backgroundVideo && (
+        <video
+          className="banner-video-bg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={backgroundImage} // La imagen carga antes que el video
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+      )}
+
+      {/* blur overlay (ahora tapará también al video) */}
       <div className="banner-overlay" />
 
       <div className={`component-container banner ${className}`}>

@@ -149,7 +149,7 @@ const CardNav = ({
 
   return (
     <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
+      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{  }}>
         <div className="card-nav-top">
             <div className="nav-left">
                 <div
@@ -174,7 +174,7 @@ const CardNav = ({
             </div>
          
 
-          <Link to="/registro" className="card-nav-cta-button" style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}>
+          <Link to="/registro" className="card-nav-cta-button" style={{ color: buttonTextColor }}>
             Unete
           </Link>
         </div>
