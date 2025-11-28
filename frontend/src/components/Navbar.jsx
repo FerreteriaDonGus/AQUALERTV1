@@ -1,6 +1,5 @@
 import React from "react";
 import CardNav from "./CardNav";
-import logo from "../assets/logo.png";
 import logo_new from "../assets/page_assets/logo.png"
 
 const navItems = [
