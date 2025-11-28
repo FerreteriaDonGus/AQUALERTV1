@@ -37,7 +37,7 @@
 body {
   margin: 0;
   font-family: "Sansation", sans-serif;
-  background-color: #2E5595; 
+  background-color: #1B3C53; 
   color: #EAEFEF;
 }
 
@@ -70,33 +70,5 @@ body {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.mapas {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 4rem;
-  padding-top: 8rem;
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.mision {
-  .mision { 
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 4rem;
-  padding-top: 8rem;
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.03);
-
-}
-}
 
 

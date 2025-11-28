@@ -6,7 +6,10 @@ import OurMission from "./pages/OurMission";
 import Registro from "./pages/Registro"; 
 import LightRaysBackground from "./components/LightRaysBackground";
 import Login from "./pages/Login";
+import FAQ from "./pages/FAQPage";
+import Soporte from "./pages/SoportePage"
 import ChatWidget from "./components/ChatWidget";
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path="/mision" element={<OurMission />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/FAQ" element={<FAQ/>}/>
+        <Route path="/Soporte" element={<Soporte/>}/>
       </Routes>
     </Router>
   );

@@ -13,7 +13,7 @@ function Login() {
                         <h1>Iniciar sesión</h1>
                         <LoginForm />
                         <p style={{ textAlign: "center", marginTop: "1.5rem"}}>
-                            Aun no esta registrado? {" "}
+                            ¿Aún no está registrado? {" "}
                             <Link to="/registro" style={{color:"#8ee08e", textDecoration:"underline", cursor:"pointer"}}>Registrarse</Link>
                         </p>
                     </div>

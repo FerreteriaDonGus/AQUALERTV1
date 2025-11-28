@@ -11,7 +11,10 @@ import "./HomePage.css";
 
 //assets importaciones
 import post1 from "../assets/estaticas/post1.jpg"
-import post2 from "../assets/estaticas/regisscreen.png"
+import post2 from "../assets/page_assets/mantenimiento.png"
+import post3 from "../assets/estaticas/externas/xsiapasc.png"
+import post4 from "../assets/estaticas/externas/siapabanner.png"
+import mantenimiento from "../assets/page_assets/mantenimiento.png"
 import simarlogo from "../assets/estaticas/externas/simarlogo.png"
 import simarpreview from "../assets/estaticas/externas/simarpreview.png"
 import pestatic from "../assets/estaticas/externas/estatico_1.png"
@@ -21,6 +24,7 @@ import banner_prestado from "../assets/estaticas/poolpvz.png"
 import carouse2 from "../assets/estaticas/externas/inegi.png"
 import banner_video from "../assets/estaticas/externas/Videos/medusonas.mp4"
 import ninopepenando from "../assets/estaticas/placeholders/nino_pepenador.jpg"
+
 
 
 function HomePage() {
@@ -35,7 +39,7 @@ function HomePage() {
 
   return (
     <PageLayout>
-      <Banner fullScreen backgroundImage={banner_prestado} backgroundVideo={banner_video} scrollToId="descripcion" title="AquaAlert" subtitle="Identifica, conoce y actua"/>
+      <Banner fullScreen backgroundImage={banner_prestado} backgroundVideo={banner_video} scrollToId="descripcion" title="AquaAlert" subtitle="Identifica, conoce y actúa"/>
       <div className="page-inner">
         <div></div>
         <DescriptionBox
@@ -62,7 +66,9 @@ function HomePage() {
         <ItemContainer
         titulo="Publicaciones destacadas"
         items={[
-          {imagen: post2 , descripcion: "Registros abiertos!", link: "/registro"},
+          {imagen: mantenimiento , descripcion: "Los registros están actualmente en mantenimiento, agradecemos su comprensión y esperamos volver con el servicio pronto!", link: "/registro"},
+          {imagen: post3, descripcion: "Recomendamos reportar fallas a SIAPA mediante X (twitter)", link: "https://x.com/siapagdl"},
+          {imagen: post4, descripcion: "web oficial de SIAPA", link: "https://www.siapa.gob.mx/quejas-y-sugerencias"},
           {imagen: simarpreview , descripcion: "Simar web oficial", link: "https://simar.conabio.gob.mx/"},
           {imagen: pestatic, descripcion: "Tendencias en los cuerpos de agua a nivel nacional 2024", link: "https://www.biodiversidad.gob.mx/monitoreo/simoh-mx/cuerpos-de-agua"},
           {imagen: pestatic_2, descripcion: "Situación del agua en México por IMCO.org.mx", link: "https://imco.org.mx/situacion-del-agua-en-mexico/"}

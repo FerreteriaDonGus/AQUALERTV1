@@ -31,10 +31,10 @@ function MapsPage() {
 
   return (
     <PageLayout>
-      <Banner fullScreen backgroundImage={banner} scrollToId="mapas" title="Mapas y documentos" subtitle="Coleccion de mapas y publicaciones que se ira actualizando con el tiempo, la mayoria envuelven a mexico aunque nuestro enfoque es especialmente en Jalisco"/>
+      <Banner fullScreen backgroundImage={banner} scrollToId="mapas" title="Mapas y documentos" subtitle="Colección de mapas y publicaciones que se irá actualizando con el tiempo. La mayoría envuelven a México, aunque nuestro enfoque es especialmente en Jalisco."/>
       <div className="page-inner">
         <DescriptionBox
-          title="Mapas y data center"
+          title="Mapas y documentos"
           id="mapas"
           description="Explora nuestros mapas interactivos y accede a datos detallados sobre cuerpos de agua, clima y gestión del agua en México. Nuestra plataforma ofrece visualizaciones claras y herramientas analíticas para comprender mejor el estado del agua en diversas regiones."
         />

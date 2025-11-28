@@ -25,8 +25,8 @@ const navItems = [
     bgColor: "#333446",
     textColor: "#EAEFEF",
     links: [
-      { label: "Preguntas Generales", href: "/faq#generales", ariaLabel: "Lee las preguntas generales" },
-      { label: "Soporte", href: "/faq#soporte", ariaLabel: "Encuentra ayuda en soporte" },
+      { label: "Preguntas Generales", href: "/FAQ", ariaLabel: "Lee las preguntas generales" },
+      { label: "Soporte", href: "/soporte", ariaLabel: "Encuentra ayuda en soporte" },
     ],
   },
 ];

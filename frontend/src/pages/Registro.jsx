@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
 import RegistroForm from "../components/RegistroForm";
+import DescriptionBox from "../components/DescriptionBox";
 import "./Registro.css";
 import { Link } from "react-router-dom"
 
@@ -41,6 +42,11 @@ function Registro() {
     return (
         <PageLayout>
             <div className="page-inner">
+                <DescriptionBox
+                id="Mantenimiento"
+                title="Registros temporalmente deshabilitados" 
+                description="Lamentamos el inconveniente, los registros están temporalmente deshabilitados debido a interrupciones en el desarrollo. Esperamos tener todo listo pronto :("
+                />
                 <div className="registro-window">
                     <div className="registro-card">
                         <h1>Registrarse</h1>
@@ -51,8 +57,8 @@ function Registro() {
                             message={message}
                         />
                         <p style={{ textAlign: "center", marginTop: "1.5rem"}}>
-                            Ya tiene una cuenta? {" "}
-                            <Link to="/login" style={{color: "#8ee08e", textDecoration: "underline", cursor: "pointer"}}>Iniciar Sesion</Link>
+                            ¿Ya tiene una cuenta? {" "}
+                            <Link to="/login" style={{color: "#8ee08e", textDecoration: "underline", cursor: "pointer"}}>Iniciar Sesión</Link>
                         </p>
                     </div>
                 </div>
