@@ -6,6 +6,7 @@ import OurMission from "./pages/OurMission";
 import Registro from "./pages/Registro"; 
 import LightRaysBackground from "./components/LightRaysBackground";
 import Login from "./pages/Login";
+import ChatWidget from "./components/ChatWidget";
 
 function App() {
   return (

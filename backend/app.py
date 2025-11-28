@@ -3,14 +3,19 @@ from flask_cors import CORS
 from extensions import jwt
 from extensions import db, migrate
 from config import Config
+
+# BLUEPRINTS
 # from models import Rol, User, PendingPost, PublishedPost
 from routes.protected import bp_protegido
 from routes.auth import auth_bp
+from routes.chat import chat_bp
+
 
 def create_app():  
     
     app = Flask(__name__)
     app.config.from_object(Config)
+    app.register_blueprint(chat_bp, url_prefix="/api")
     
     CORS(app, resources={r"/api/*": {"origins":"http://localhost:5173"}})
     
