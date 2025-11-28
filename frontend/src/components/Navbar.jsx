@@ -1,6 +1,7 @@
 import React from "react";
 import CardNav from "./CardNav";
 import logo from "../assets/logo.png";
+import logo_new from "../assets/page_assets/logo.png"
 
 const navItems = [
   {
@@ -34,7 +35,7 @@ export default function Navbar() {
   return (
     <CardNav
       items={navItems}
-      logo={logo}
+      logo={logo_new}
       baseColor="rgba(30, 30, 42, 0.6)"
       menuColor="#EAEFEF"
       buttonBgColor="#7F8CAA"
